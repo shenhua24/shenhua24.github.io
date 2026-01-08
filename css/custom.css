@@ -1,8 +1,22 @@
 /* ============================================================
-   王随风的博客 - 全站沉浸式磨砂美化 (大师版)
+   王随风的博客 - 全站沉浸式磨砂美化 (GitHub 部署修正版)
    ============================================================ */
 #web_bg {
+  background-image: url("../img/bg.webp") !important;
   background-attachment: fixed !important;
+  background-position: center !important;
+  background-size: cover !important;
+  display: block !important;
+}
+#page-header,
+#footer,
+.post-bg,
+#post-info {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+#page-header:before {
+  background: transparent !important;
 }
 #content-inner,
 .layout,
@@ -12,14 +26,10 @@
 #category,
 #tag,
 #page,
-#post,
-#page-header {
+#post {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-}
-#page-header:before {
-  background: transparent !important;
 }
 .recent-post-item,
 #post,
