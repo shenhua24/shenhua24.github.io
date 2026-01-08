@@ -1,0 +1,195 @@
+/* ============================================================
+   王随风的博客 - 全站沉浸式磨砂美化 (大师版)
+   ============================================================ */
+#web_bg {
+  background-attachment: fixed !important;
+}
+#content-inner,
+.layout,
+#recent-posts,
+.layout_page,
+#archive,
+#category,
+#tag,
+#page,
+#post,
+#page-header {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+#page-header:before {
+  background: transparent !important;
+}
+.recent-post-item,
+#post,
+#page,
+#archive,
+#category,
+#tag {
+  background: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 15px !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  padding: 40px !important;
+  transition: all 0.3s ease-in-out;
+}
+.recent-post-item:hover {
+  background: rgba(255,255,255,0.95) !important;
+  transform: translateY(-4px);
+}
+/* --- 增强阅读可读性 --- */
+#article-container {
+  color: #1a1a1a !important;
+  font-size: 17.5px !important;
+  line-height: 2 !important;
+  font-weight: 450 !important;
+}
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+/* --- 关于我页面：布局修正 --- */
+#page .page-title {
+  text-align: center !important;
+  margin: 20px 0 40px 0 !important;
+}
+.about-page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+.author-info-box {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.author-avatar {
+  position: relative;
+  width: 160px !important;
+  height: 160px !important;
+  flex-shrink: 0;
+}
+.author-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid #fff !important;
+  margin: 0 !important;
+}
+.online-dot {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  background: #52c41a;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+.tag-item {
+  background: rgba(255,255,255,0.8) !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 14px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  white-space: nowrap;
+  margin: 5px 0;
+}
+/* --- 联系方式胶囊卡片 --- */
+.contact-list {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.contact-card {
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255,255,255,0.7) !important;
+  padding: 10px 25px !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+}
+.contact-card i {
+  font-size: 1.4rem;
+  margin-right: 12px;
+  color: #49b1f5;
+}
+.contact-card .contact-content {
+  display: flex;
+  flex-direction: column;
+}
+.contact-card .contact-content .contact-label {
+  font-size: 10px;
+  color: #888;
+}
+.contact-card .contact-content .contact-id {
+  font-size: 15px;
+  font-weight: bold;
+}
+/* --- 其他微调 --- */
+#footer {
+  background: transparent !important;
+}
+#nav {
+  background: rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px);
+}
+@-moz-keyframes blink {
+  0% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+  }
+}
+@-o-keyframes blink {
+  0% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+  }
+}
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+  }
+}

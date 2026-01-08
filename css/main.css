@@ -1,0 +1,4 @@
+.loading-img {
+  background: url(/img/my-avatar.webp) no-repeat center center;
+  background-size: cover;
+}
