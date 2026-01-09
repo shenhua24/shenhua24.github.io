@@ -64,41 +64,80 @@
   color: #000 !important;
   font-weight: 800 !important;
 }
-/* --- 关于我页面：布局修正 --- */
-#page .page-title {
-  text-align: center !important;
-  margin: 20px 0 40px 0 !important;
+/* --- 移动端侧边栏优化：仅保留文章和分类 --- */
+#sidebar-menus .site-data a[href="/tags/"] {
+  display: none !important;
 }
-.about-page-container {
+#sidebar-menus .site-data a[href="/archives/"],
+#sidebar-menus .site-data a[href="/categories/"] {
+  width: 50% !important;
+  display: inline-block !important;
+}
+/* 分类页美化 */
+#page .category-lists {
+  padding: 20px 0;
+}
+#page .category-lists ul.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+#page .category-lists ul.category-list li.category-list-item {
+  list-style: none;
+  background: rgba(255,255,255,0.7);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+#page .category-lists ul.category-list li.category-list-item:hover {
+  background: #49b1f5;
+  transform: translateY(-3px);
+}
+#page .category-lists ul.category-list li.category-list-item:hover a {
+  color: #fff !important;
+}
+#page .category-lists ul.category-list li.category-list-item a.category-list-link {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+#page .category-lists ul.category-list li.category-list-item span.category-list-count {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #888;
+}
+/* --- 关于我：静态紧凑布局 --- */
+#article-container {
+  text-align: center;
+}
+.about-main {
   display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px auto 0;
+  max-width: 900px;
   width: 100%;
 }
-.author-info-box {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-.author-avatar {
-  position: relative;
-  width: 160px !important;
-  height: 160px !important;
+.author-center {
   flex-shrink: 0;
 }
-.author-avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  border: 4px solid #fff !important;
-  margin: 0 !important;
+.author-center .avatar-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
 }
-.online-dot {
+.author-center .avatar-wrapper .center-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.author-center .avatar-wrapper .online-status {
   position: absolute;
   bottom: 12px;
   right: 12px;
@@ -107,49 +146,60 @@
   background: #52c41a;
   border: 3px solid #fff;
   border-radius: 50%;
-  animation: blink 2s infinite;
+  box-shadow: 0 0 10px rgba(82,196,26,0.5);
+  animation: online-flicker 2s infinite alternate;
 }
-.tag-item {
-  background: rgba(255,255,255,0.8) !important;
-  padding: 8px 16px !important;
-  border-radius: 20px !important;
-  font-size: 14px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  white-space: nowrap;
-  margin: 5px 0;
+.author-center .author-quote {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
 }
-/* --- 联系方式胶囊卡片 --- */
-.contact-list {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-.contact-card {
-  display: flex !important;
-  align-items: center !important;
-  background: rgba(255,255,255,0.7) !important;
-  padding: 10px 25px !important;
-  border-radius: 50px !important;
-  border: 1px solid rgba(255,255,255,0.4) !important;
-}
-.contact-card i {
-  font-size: 1.4rem;
-  margin-right: 12px;
-  color: #49b1f5;
-}
-.contact-card .contact-content {
+.tag-group {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  width: 180px;
 }
-.contact-card .contact-content .contact-label {
-  font-size: 10px;
-  color: #888;
+.left-tags {
+  align-items: flex-end;
 }
-.contact-card .contact-content .contact-id {
-  font-size: 15px;
+.right-tags {
+  align-items: flex-start;
+}
+.tag-static {
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(10px);
+  padding: 10px 20px !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-weight: 600;
+  white-space: nowrap;
+  color: #333;
+}
+.about-contact {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+.about-contact .contact-pill {
+  background: rgba(255,255,255,0.8);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
   font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+/* 音乐播放器磨砂透明美化 */
+.aplayer.aplayer-fixed {
+  background: rgba(255,255,255,0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 0 15px 15px 0 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+.aplayer .aplayer-info {
+  background: transparent !important;
 }
 /* --- 其他微调 --- */
 #footer {
@@ -159,47 +209,43 @@
   background: rgba(255,255,255,0.2) !important;
   backdrop-filter: blur(10px);
 }
-@-moz-keyframes blink {
+@-moz-keyframes online-flicker {
   0% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(82,196,26,0.4);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(82,196,26,0.9);
   }
 }
-@-webkit-keyframes blink {
+@-webkit-keyframes online-flicker {
   0% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(82,196,26,0.4);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(82,196,26,0.9);
   }
 }
-@-o-keyframes blink {
+@-o-keyframes online-flicker {
   0% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(82,196,26,0.4);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(82,196,26,0.9);
   }
 }
-@keyframes blink {
+@keyframes online-flicker {
   0% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(82,196,26,0);
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(82,196,26,0.4);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(82,196,26,0);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(82,196,26,0.9);
   }
 }
